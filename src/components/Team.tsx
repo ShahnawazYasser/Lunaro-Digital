@@ -1,5 +1,5 @@
 import React from 'react';
-import { Linkedin, Github, Twitter } from 'lucide-react';
+import { Linkedin, Github, Twitter, Instagram } from 'lucide-react';
 import Section from './Section';
 
 const Team: React.FC = () => {
@@ -10,9 +10,9 @@ const Team: React.FC = () => {
       bio: 'Front-end developer with 4+ years of experience in modern web technologies. Specializes in React, Wordpress, Shopify',
       image: 'https://i.ibb.co/BVTdcPkP/dsc02412.jpg',
       social: {
-        linkedin: '#',
-        github: '#',
-        twitter: '#'
+        linkedin: 'https://linkedin.com/in/Shahnawaz-Yasser',
+        github: 'https://github.com/ShahnawazYasser',
+        instagram: 'https://www.instagram.com/shahnawaz_yasser/'
       }
     },
     {
@@ -81,9 +81,9 @@ const Team: React.FC = () => {
                     <Github className="w-5 h-5" />
                   </a>
                 )}
-                {member.social.twitter && (
-                  <a href={member.social.twitter} className="text-slate-400 hover:text-blue-400 transition-colors duration-300 hover:scale-110 transform">
-                    <Twitter className="w-5 h-5" />
+                {member.social.instagram && (
+                  <a href={member.social.instagram} className="text-slate-400 hover:text-blue-400 transition-colors duration-300 hover:scale-110 transform">
+                    <Instagram className="w-5 h-5" />
                   </a>
                 )}
               </div>
