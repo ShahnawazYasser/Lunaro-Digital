@@ -39,7 +39,7 @@ const Contact: React.FC = () => {
       icon: Phone,
       title: 'Call Us',
       content: '+92 (304) 4816-200',
-      link: 'tel:+15551234567'
+      link: 'tel:+923044816200'
     },
     {
       icon: MapPin,
@@ -56,7 +56,7 @@ const Contact: React.FC = () => {
   ];
 
   return (
-    <Section id="contact" className="bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900 min-h-screen flex flex-col lg:flex-row items-center justify-center px-6">
+    <Section id="contact" className="bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900 min-h-screen px-6 flex justify-center">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
