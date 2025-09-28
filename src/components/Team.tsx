@@ -17,7 +17,7 @@ const Team: React.FC = () => {
     },
     {
       name: 'Saifullah Khan',
-      role: 'Digital Marketing Strategist',
+      role: 'Marketing Strategist',
       bio: 'SEO and social media marketing expert with proven track record of growing brands online. 3+ years in digital strategy and content marketing.',
       image: '',
       social: {
@@ -26,8 +26,8 @@ const Team: React.FC = () => {
       }
     },
     {
-      name: 'Shah Jahan Khan',
-      role: 'Data Analytics Specialist',
+      name: 'Shahjahan Khan',
+      role: 'Data Scientist',
       bio: 'Data scientist with expertise in web analytics, conversion optimization, and business intelligence. Transforms complex data into actionable insights.',
       image: '',
       social: {
