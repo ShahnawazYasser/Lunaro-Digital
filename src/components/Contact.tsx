@@ -42,17 +42,16 @@ const Contact: React.FC = () => {
       link: 'tel:+923044816200'
     },
     {
-      icon: MapPin,
-      title: 'Visit Us',
-      content: 'San Francisco, CA',
-      link: '#'
+      icon: Instagram,
+      title: 'Follow Us',
+      content: '@lunaro.pk',
+      link: '#https://www.instagram.com/lunaro.pk/'
     }
   ];
 
   const socialLinks = [
     { icon: Linkedin, link: '#', label: 'Follow Lunaro on LinkedIn' },
-    { icon: Twitter, link: '#', label: 'Follow Lunaro on Twitter' },
-    { icon: Instagram, link: '#', label: 'Follow Lunaro on Instagram' }
+    { icon: Twitter, link: '#', label: 'Follow Lunaro on Twitter' }
   ];
 
   return (
