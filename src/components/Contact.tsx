@@ -6,10 +6,12 @@ const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    message: ''
+    message: '',
+    botField: '' // Honeypot field
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [status, setStatus] = useState<null | "success" | "error">(null);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -18,15 +20,47 @@ const Contact: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    // spam check: if honeypot filled → block
+    if (formData.botField) {
+      console.warn("Bot submission detected.");
+      return;
+    }
+
     setIsSubmitting(true);
+    setStatus(null);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    alert('Thank you for your message! We\'ll get back to you soon.');
-    setFormData({ name: '', email: '', message: '' });
-    setIsSubmitting(false);
+    try {
+      const response = await fetch("https://YOUR_API_GATEWAY_URL/production/contact", { //add producction URL
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }),
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        setFormData({ name: "", email: "", message: "", botField: "" });
+      } else {
+        setStatus("error");
+      }
+    } catch (err) {
+      console.error("Error submitting contact form:", err);
+      setStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
+
+  //   // Simulate form submission
+  //   await new Promise(resolve => setTimeout(resolve, 1000));
+    
+  //   alert('Thank you for your message! We\'ll get back to you soon.');
+  //   setFormData({ name: '', email: '', message: '' });
+  //   setIsSubmitting(false);
+  // };
 
   const contactInfo = [
     {
@@ -55,9 +89,9 @@ const Contact: React.FC = () => {
   ];
 
   return (
-    <Section id="contact" className="bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900 min-h-screen px-6 flex justify-center">
+    <Section id="contact" className="bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900 min-h-screen lg:h-screen px-6 flex justify-center">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-14">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Start Your Project Today
           </h2>
@@ -67,6 +101,7 @@ const Contact: React.FC = () => {
         </div>
         
         <div className="grid lg:grid-cols-2 gap-12">
+          {/* Contact Info */}
           <div>
             <h3 className="text-2xl font-semibold text-white mb-8">Get In Touch</h3>
             
@@ -89,6 +124,7 @@ const Contact: React.FC = () => {
               ))}
             </div>
             
+            {/* Social Links */}
             <div>
               <h4 className="text-lg font-semibold text-white mb-4">Follow Us</h4>
               <div className="flex space-x-4">
@@ -106,6 +142,7 @@ const Contact: React.FC = () => {
             </div>
           </div>
           
+          {/* Contact Form */}
           <div>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
