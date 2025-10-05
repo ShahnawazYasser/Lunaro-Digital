@@ -8,7 +8,7 @@ const Team: React.FC = () => {
       name: 'Shahnawaz Yasser',
       role: 'Solutions Architect & Founder',
       bio: 'Front-end developer with 4+ years of experience in modern web technologies. Specializes in React, Wordpress, Shopify',
-      image: 'https://i.ibb.co/BVTdcPkP/dsc02412.jpg',
+      image: 'https://lunaro-assests.s3.eu-north-1.amazonaws.com/Screenshot+2025-09-28+092526.png',
       social: {
         linkedin: 'https://linkedin.com/in/Shahnawaz-Yasser',
         github: 'https://github.com/ShahnawazYasser',
@@ -38,7 +38,7 @@ const Team: React.FC = () => {
   ];
 
   return (
-    <Section id="team" className="bg-slate-900">
+    <Section id="team" className="min-h-screen lg:h-screen bg-slate-900">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
