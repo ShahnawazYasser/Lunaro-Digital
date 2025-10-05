@@ -8,7 +8,7 @@ const Team: React.FC = () => {
       name: 'Shahnawaz Yasser',
       role: 'Solutions Architect & Founder',
       bio: 'Front-end developer with 4+ years of experience in modern web technologies. Specializes in React, Wordpress, Shopify',
-      image: 'https://i.ibb.co/BVTdcPkP/dsc02412.jpg',
+      image: 'https://lunaro-assests.s3.eu-north-1.amazonaws.com/Screenshot+2025-09-28+092526.png',
       social: {
         linkedin: 'https://linkedin.com/in/Shahnawaz-Yasser',
         github: 'https://github.com/ShahnawazYasser',
@@ -17,28 +17,28 @@ const Team: React.FC = () => {
     },
     {
       name: 'Saifullah Khan',
-      role: 'Digital Marketing Strategist',
+      role: 'Marketing Strategist',
       bio: 'SEO and social media marketing expert with proven track record of growing brands online. 3+ years in digital strategy and content marketing.',
-      image: '',
+      image: 'https://lunaro-assests.s3.eu-north-1.amazonaws.com/Screenshot+2025-09-28+091422.png',
       social: {
-        linkedin: '#',
-        twitter: '#'
+        linkedin: 'https://linkedin.com/in/Saifullah-Khan',
+        instagram: 'https://www.instagram.com/rana.khan24/'
       }
     },
     {
-      name: 'Shah Jahan Khan',
-      role: 'Data Analytics Specialist',
+      name: 'Shahjahan Khan',
+      role: 'Data Scientist',
       bio: 'Data scientist with expertise in web analytics, conversion optimization, and business intelligence. Transforms complex data into actionable insights.',
-      image: '',
+      image: 'https://lunaro-assests.s3.eu-north-1.amazonaws.com/Screenshot+2025-09-28+091031.png',
       social: {
-        linkedin: '#',
-        github: '#'
+        linkedin: 'https://www.linkedin.com/in/shahjahan-khan-pf/',
+        github: 'https://github.com/shahjahanburki/'
       }
     }
   ];
 
   return (
-    <Section id="team" className="bg-slate-900">
+    <Section id="team" className="min-h-screen lg:h-screen bg-slate-900">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
